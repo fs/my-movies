@@ -9,7 +9,10 @@ RailsBase::Application.routes.draw do
   end
 
   resources :users do
-    resources :albums, except: [:new, :create]
+    resources :albums, except: [:new, :create] do
+      get :add_movie
+      post :add
+    end
   end
 
 end

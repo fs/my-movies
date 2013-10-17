@@ -1,8 +1,5 @@
-require 'github/markdown'
-
 class DashboardController < ApplicationController
-  expose(:recent_movies) { Movie.recent }
-
   def index
+    @recent_movies = Movie.all
   end
 end

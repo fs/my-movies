@@ -4,5 +4,5 @@ class Album < ActiveRecord::Base
   has_many :albums_movies
   has_many :movies, through: :albums_movies
 
-  validates :title, presence: true
+  validates :title, presence: { message: 'must be a string' }
 end
