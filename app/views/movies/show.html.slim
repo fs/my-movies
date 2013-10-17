@@ -1,0 +1,27 @@
+- title 'View movie'
+.show-item
+  .well.movie.form-horizontal
+
+    .control-group
+      label.control-label
+        | Title
+      .controls
+        .input-xlarge.uneditable-input.string.span7
+          = movie.title
+    .control-group
+      label.control-label
+        | Rating
+      .controls
+        .input-xlarge.uneditable-input.integer.span7
+          = movie.rating
+
+  h2 In albums:
+  = render 'albums/albums_table', albums: movie.albums
+  
+
+  .form-actions
+    = link_to(edit_movie_path(movie), class: 'btn btn-primary') do
+      i.icon-pencil.icon-white
+      | Edit
+    '  or
+    = link_to 'Back', :back

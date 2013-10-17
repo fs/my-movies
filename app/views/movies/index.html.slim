@@ -1,0 +1,33 @@
+- title 'Listing movies'
+
+table.table.table-striped
+  thead
+    tr
+        th Title
+        th Rating
+        th Actions
+
+  - movies.each do |movie|
+    tr
+      td= movie.title
+      td= movie.rating
+      td.actions
+        = link_to(movie, class: 'btn') do
+          i.icon-eye-open
+          |  Show
+        = link_to(edit_movie_path(movie), class: 'btn') do
+          i.icon-edit
+          |  Edit
+        = link_to(movie, confirm: 'Are you sure?', method: :delete, class: 'btn btn-danger') do
+          i.icon-trash.icon-white
+          |  Delete
+
+.paginator
+  = paginate(movies)
+
+br
+= link_to new_movie_path, class: 'btn btn-primary' do
+  i.icon-plus.icon-white
+  |  New Movie
+
+

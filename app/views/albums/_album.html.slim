@@ -1,0 +1,6 @@
+tr
+  td= album.title
+  td.actions
+    = link_to([album.user, album], class: 'btn') do
+      i.icon-eye-open
+      | Show

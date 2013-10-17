@@ -1,0 +1,22 @@
+- title 'Listing albums'
+
+table.table.table-striped
+  thead
+    tr
+        th Title
+        th Owner
+        th Actions
+
+  - albums.each do |album|
+    tr
+      td= album.title
+      td= album.user
+      td.actions
+        = link_to([current_user, album], class: 'btn') do
+          i.icon-eye-open
+          |  Show
+
+.paginator
+  = paginate(albums)
+
+

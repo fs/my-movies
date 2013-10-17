@@ -1,0 +1,10 @@
+.scaffold-form
+  = simple_form_for(album) do |f|
+    debug(album)
+    .form-inputs
+      = f.input :title
+
+    .form-actions
+      = f.button :submit
+      '  or
+      = link_to 'Back', :back

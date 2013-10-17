@@ -1,0 +1,7 @@
+tr
+  td= movie.title
+  td= movie.rating
+  td.actions
+    = link_to(movie, class: 'btn') do
+      i.icon-eye-open
+      | Show

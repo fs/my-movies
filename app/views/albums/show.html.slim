@@ -1,0 +1,19 @@
+- title 'View album'
+.show-item
+  .well.album.form-horizontal
+    .control-group
+      label.control-label
+        | Title
+      .controls
+        .input-xlarge.uneditable-input.string.span7
+          = album.title
+  .well.movies
+    = render 'movies/movies_table', movies: album.movies
+
+  .form-actions
+    - if album.user == current_user
+      = link_to(edit_user_album_path(current_user, album), class: 'btn btn-primary') do
+        i.icon-pencil.icon-white
+        | Edit
+      '  or
+    = link_to 'Back', :back
